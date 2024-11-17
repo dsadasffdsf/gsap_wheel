@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .dot__active {
+    @apply absolute w-[56px] h-[56px] border-[rgba(66,86,122,0.1)] border-[1px] flex justify-center items-center bg-inherit;
+  }
+  .dot {
+    @apply bg-white border-[1px] border-[rgba(66,86,122,0.1)] flex justify-center items-center scale-[.1];
+  }
+  .grad_line {
+    position: relative;
+    padding-left: 50px; /* Отступ для линии */
+  }
+
+  .grad_line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px; /* Ширина линии */
+    height: 100%; /* Высота равна высоте текста */
+    background: linear-gradient(0deg, rgba(56, 119, 238, 1) 0%, rgba(239, 93, 168, 1) 100%);
+  }
+  .btn_shadow {
+    box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+  }
+  /* .dot::before {
+    content: ' ';
+    background: red;
+    position: absolute;
+    opacity: 0.45;
+    width: 11px;
+    height: 11px;
+    border-radius: 9999px;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .dot:hover::before {
+    transform: scale(3); 
+  }
+
+  .dot:hover {
+    transform: scale(1); 
+  }
+
+  .dot.active {
+    transform: scale(1);
+    background-color: white;
+    border: solid 1px rgba(66, 86, 122, 0.1);
+  } */
+}
